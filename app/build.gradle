@@ -1,0 +1,30 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.garbagecam.app'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.garbagecam.app'
+        minSdk 26
+        targetSdk 35
+        versionCode 1
+        versionName '0.1'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.core:core:1.15.0'
+
+    // RTSP server + Camera2/MediaCodec encoder stack (Apache-2.0)
+    implementation 'com.github.pedroSG94:RTSP-Server:1.4.2'
+    implementation 'com.github.pedroSG94.RootEncoder:library:2.8.0'
+}

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gc_bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GARBAGECAM v0.1"
+            android:textColor="@color/gc_green"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Old phone → boring H.264 → RTSP → NVR"
+            android:textColor="@color/gc_dim"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/gc_panel"
+            android:padding="12dp"
+            android:text="STOPPED"
+            android:textColor="@color/gc_red"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/urlText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="RTSP URL will appear here"
+            android:textColor="@color/gc_text"
+            android:textIsSelectable="true"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/presetSafe"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SAFE\n720P" />
+
+            <Button
+                android:id="@+id/presetAnnke"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:text="ANNKE-ish\n1080P" />
+
+            <Button
+                android:id="@+id/presetPush"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:text="PUSH IT\n1080P30" />
+        </LinearLayout>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18dp" android:text="Resolution" android:textColor="@color/gc_dim" />
+        <Spinner android:id="@+id/resolutionSpinner" android:layout_width="match_parent" android:layout_height="48dp" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Frame rate (fps)" android:textColor="@color/gc_dim" />
+        <EditText android:id="@+id/fpsEdit" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:textColor="@color/gc_text" android:textColorHint="@color/gc_dim" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Video bitrate (kbps)" android:textColor="@color/gc_dim" />
+        <EditText android:id="@+id/bitrateEdit" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:textColor="@color/gc_text" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="H.264 profile" android:textColor="@color/gc_dim" />
+        <Spinner android:id="@+id/profileSpinner" android:layout_width="match_parent" android:layout_height="48dp" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Encoder I-frame interval (seconds)" android:textColor="@color/gc_dim" />
+        <EditText android:id="@+id/iFrameEdit" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:textColor="@color/gc_text" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Force IDR every N seconds (0 = off)" android:textColor="@color/gc_dim" />
+        <EditText android:id="@+id/forceIdrEdit" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:textColor="@color/gc_text" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="Rotation" android:textColor="@color/gc_dim" />
+        <Spinner android:id="@+id/rotationSpinner" android:layout_width="match_parent" android:layout_height="48dp" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="RTSP port" android:textColor="@color/gc_dim" />
+        <EditText android:id="@+id/portEdit" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:textColor="@color/gc_text" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="RTSP username (blank = no auth)" android:textColor="@color/gc_dim" />
+        <EditText android:id="@+id/userEdit" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="text" android:textColor="@color/gc_text" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:text="RTSP password" android:textColor="@color/gc_dim" />
+        <EditText android:id="@+id/passEdit" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPassword" android:textColor="@color/gc_text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/startButton"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="START" />
+
+            <Button
+                android:id="@+id/stopButton"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="STOP" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:paddingBottom="28dp"
+            android:text="v0.1 notes:\n• Rear Camera2 only\n• Video only (no audio)\n• Screen-off capable foreground service\n• Wi-Fi + CPU wake locks while streaming\n• Hardware H.264 via MediaCodec\n• RootEncoder prefers CBR when the phone encoder supports it\n• RTSP path is / (root)"
+            android:textColor="@color/gc_dim"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+</ScrollView>

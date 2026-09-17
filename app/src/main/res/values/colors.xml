@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="gc_bg">#101410</color>
+    <color name="gc_panel">#192019</color>
+    <color name="gc_text">#E7F5E7</color>
+    <color name="gc_green">#79FF79</color>
+    <color name="gc_dim">#A3B4A3</color>
+    <color name="gc_red">#FF7B7B</color>
+</resources>
