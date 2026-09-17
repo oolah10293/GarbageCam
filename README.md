@@ -1,11 +1,18 @@
-# GarbageCam v0.1
+# GarbageCam v0.1.1
 
 A deliberately boring Android RTSP camera for retired phones.
 
 **Target test device:** Samsung Galaxy S8  
 **Target NVR:** ANNKE N48PBB / Hikvision K75 platform
 
-## What v0.1 does
+## v0.1.1 build-system fix
+
+- `compileSdk` updated to **37** for the current RTSP/RootEncoder dependency stack.
+- Android Gradle Plugin updated to **9.1.1**.
+- Gradle wrapper configuration updated to **9.3.1**.
+- `targetSdk` remains **35** and `minSdk` remains **26**, so the Galaxy S8 on Android 9/API 28 remains supported.
+
+## What v0.1.1 does
 
 - Rear Camera2 source
 - Hardware H.264 via Android MediaCodec
@@ -43,7 +50,7 @@ A working ANNKE I51DS was inspected as a reference.
 
 Android's MediaCodec `KEY_I_FRAME_INTERVAL` is specified in **seconds**, not frames, so GarbageCam exposes seconds. The `ANNKE-ish` preset uses 3 seconds as the closest whole-second match to the I51DS main stream.
 
-**Important:** RootEncoder currently prefers hardware **CBR** when the encoder supports it. v0.1 therefore does not claim to reproduce ANNKE's VBR rate control exactly. The first goal is stable NVR decoding and predictable keyframes. We can patch the encoder for explicit VBR/CBR selection later if it matters.
+**Important:** RootEncoder currently prefers hardware **CBR** when the encoder supports it. v0.1.1 therefore does not claim to reproduce ANNKE's VBR rate control exactly. The first goal is stable NVR decoding and predictable keyframes. We can patch the encoder for explicit VBR/CBR selection later if it matters.
 
 ## Build
 
